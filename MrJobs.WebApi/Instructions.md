@@ -1,16 +1,16 @@
 # 🏠 How to run locally?
-1. Create an AzAppRego (for OAuth)  
-   No platform needed to start with (add redirect + SPA settings later when turning into a fullstack app)
-2. Add perms for API to read user profiles: AzAppRego > API permissions > Add a permission > MS Graph > 'profile' and 'User.Read'
-3. Create a scope: AzAppRego > Expose an API > Add a scope for admins and users called "API.Access"
-4. `cp appsettings.json appsettings.Development.json` (safely gitignored)
-5. Populate fields:
-   - `{{AUTH_CLIENT_ID}}` AzAppRego > Overview > copy client ID
-   - `{{AUTH_TENANT_ID}}` AzAppRego > Overview > copy tenant ID
-   - `{{AUTH_AUTHORITY}}` AzAppRego > Overview > Endpoints > copy authority URL (usually the URL w the tenant ID to restrict access for those within the enterprise)
+1. Create an Azure App Rego.
+2. When creating, no platform is needed to start (add redirect + SPA settings later when turning into a full-stack app)
+3. Add permission for API to read user profiles: Azure App Rego > API permissions > Add a permission > MS Graph > 'profile' and 'User.Read'
+4. Create a scope: Azure App Rego > Expose an API > Add a scope for admins and users called "API.Access"
+5. `cp appsettings.json appsettings.Development.json` (safely gitignored)
+6. Populate fields:
+   - `{{AUTH_CLIENT_ID}}` Azure App Rego > Overview > copy client ID
+   - `{{AUTH_TENANT_ID}}` Azure App Rego > Overview > copy tenant ID
+   - `{{AUTH_AUTHORITY}}` Azure App Rego > Overview > Endpoints > copy authority URL (usually the URL with the tenant ID to restrict access for those within the enterprise)
    - `{{AUTH_AUDIENCE}}` app rego > Manage > Expose an API > copy Application ID URI
    - `{{SYSTEM_API_KEY}}` you decide! or just use `openssl rand -base64 32`
-6. `dotnet run`
+7. `dotnet run`
 
 # 🛩️ How to test?
 Use the [.http file](./MrJobs.WebApi.http)
